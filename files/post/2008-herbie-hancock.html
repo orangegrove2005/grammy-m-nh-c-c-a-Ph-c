@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>River: The Joni Letters — Herbie Hancock | Grammy Chronicles</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cream: #faf7f2;
+      --cream2: #f3ede3;
+      --cream3: #ede5d8;
+      --gold: #b8860b;
+      --gold2: #d4a017;
+      --gold3: #f0c040;
+      --rose: #c0534a;
+      --rose2: #e07060;
+      --indigo: #3d3b8e;
+      --indigo2: #6260c0;
+      --teal: #1a7a6e;
+      --teal2: #2db3a0;
+      --text: #1c1510;
+      --text2: #4a3f35;
+      --text3: #7a6f65;
+      --border: rgba(184,134,11,0.18);
+      --shadow: rgba(28,21,16,0.1);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--cream);
+      color: var(--text);
+      font-family: 'Outfit', sans-serif;
+      font-weight: 300;
+      line-height: 1.7;
+    }
+
+    /* ── NAVBAR ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      background: rgba(250,247,242,0.93);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 3rem; height: 68px;
+      box-shadow: 0 2px 20px var(--shadow);
+    }
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem; color: var(--gold); font-weight: 600;
+      text-decoration: none; letter-spacing: 0.06em;
+      display: flex; align-items: center; gap: 0.5rem;
+    }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a {
+      color: var(--text2); text-decoration: none;
+      font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase;
+      font-weight: 500; transition: color 0.3s; position: relative;
+    }
+    .nav-links a::after {
+      content: ''; position: absolute; bottom: -4px; left: 0; right: 0;
+      height: 2px; background: var(--gold);
+      transform: scaleX(0); transition: transform 0.3s; transform-origin: left;
+    }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-links a:hover::after { transform: scaleX(1); }
+
+    /* ── HERO ── */
+    .article-hero {
+      position: relative;
+      min-height: 580px;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: flex-end;
+      text-align: center;
+      overflow: hidden;
+      padding-bottom: 4rem;
+      padding-top: 68px;
+    }
+    .article-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiy8m5uAcVu5twxsgWEDY1rrEex71mUgfKOSvqLnbWMGOtIC-8QkmGVe7VEP1YS5C6sx-uU_uDUVh_86dMgiV4SN2clTnS88kUpDhVLMXdjGoUACtRsXYnQ8KCn8J5dXY3gEEWzP8RAo5A/w1200-h630-p-k-no-nu/cover.jpg');
+      background-size: cover;
+      background-position: center;
+      filter: blur(4px) brightness(0.28) saturate(0.5);
+      transform: scale(1.07);
+      z-index: 0;
+    }
+    .article-hero::after {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        linear-gradient(to top,
+          rgba(10,6,2,1)    0%,
+          rgba(10,6,2,0.88) 35%,
+          rgba(30,18,6,0.5) 65%,
+          rgba(50,30,10,0.15) 100%
+        ),
+        radial-gradient(ellipse 70% 60% at 50% 80%, rgba(26,122,110,0.2) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 40% at 20% 20%, rgba(184,134,11,0.12) 0%, transparent 50%);
+      z-index: 1;
+    }
+    .hero-year-watermark {
+      position: absolute; right: 5%; top: 50%; transform: translateY(-60%);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18rem; font-weight: 700; line-height: 1;
+      color: rgba(240,192,64,0.05);
+      pointer-events: none; z-index: 2;
+      letter-spacing: -0.05em; user-select: none;
+    }
+    .hero-inner {
+      position: relative; z-index: 3;
+      max-width: 750px; padding: 0 2rem;
+    }
+    .grammy-badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
+      background: rgba(26,122,110,0.18);
+      border: 1px solid rgba(45,179,160,0.35);
+      color: var(--teal2);
+      padding: 0.4rem 1.2rem; border-radius: 100px;
+      margin-bottom: 1.5rem;
+    }
+    .hero-year-small {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 7rem; font-weight: 700; line-height: 1;
+      color: rgba(240,192,64,0.1); margin-bottom: -1.5rem;
+      user-select: none;
+    }
+    .article-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 5vw, 3.8rem);
+      font-weight: 700; font-style: italic;
+      color: #fff; margin-bottom: 0.5rem;
+      text-shadow: 0 2px 24px rgba(0,0,0,0.7);
+      position: relative; z-index: 1;
+    }
+    .article-artist {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic; color: var(--teal2);
+      font-size: 1.6rem; margin-bottom: 0.6rem; font-weight: 300;
+    }
+    .article-meta {
+      font-size: 0.72rem; color: rgba(250,247,242,0.45);
+      letter-spacing: 0.18em; text-transform: uppercase;
+    }
+    .hero-accent-bar {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      height: 3px; z-index: 4;
+      background: linear-gradient(90deg, var(--teal) 0%, var(--gold) 50%, var(--indigo2) 100%);
+    }
+
+    /* ── BODY ── */
+    .article-body {
+      max-width: 740px;
+      margin: 0 auto 5rem;
+      padding: 3rem 2rem 0;
+    }
+
+    .back-link {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      color: var(--text3); font-size: 0.75rem;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      text-decoration: none; transition: color 0.3s;
+      margin-bottom: 2.5rem;
+      padding: 0.5rem 1rem 0.5rem 0.75rem;
+      border: 1px solid var(--border); border-radius: 100px;
+      background: #fff;
+    }
+    .back-link:hover { color: var(--gold); border-color: var(--gold); }
+    .back-link::before { content: '←'; font-size: 1rem; }
+
+    /* ── ALBUM SHOWCASE ── */
+    .album-showcase {
+      display: grid;
+      grid-template-columns: 190px 1fr;
+      gap: 2rem;
+      background: #fff;
+      border: 1px solid rgba(0,0,0,0.07);
+      border-top: 3px solid var(--teal);
+      padding: 2rem;
+      margin: 0 0 2.5rem;
+      border-radius: 0 0 12px 12px;
+      box-shadow: 0 4px 24px var(--shadow);
+      position: relative; overflow: hidden;
+    }
+    .album-showcase::before {
+      content: '';
+      position: absolute; top: -20px; right: -20px;
+      width: 180px; height: 180px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(26,122,110,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .album-cover-frame { position: relative; flex-shrink: 0; }
+    .album-cover-frame img {
+      width: 100%; aspect-ratio: 1;
+      object-fit: cover; display: block;
+      border-radius: 8px;
+      box-shadow: 0 8px 32px rgba(28,21,16,0.25);
+      transition: transform 0.4s ease;
+    }
+    .album-cover-frame:hover img { transform: scale(1.02); }
+    .album-cover-frame::after {
+      content: '';
+      position: absolute; top: -4px; left: -4px; right: 4px; bottom: 4px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--teal), var(--gold));
+      z-index: -1;
+    }
+    .album-info {
+      display: flex; flex-direction: column;
+      justify-content: center; gap: 0.7rem;
+    }
+    .album-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem; font-weight: 700; font-style: italic;
+      color: var(--text); line-height: 1.25; margin-bottom: 0.3rem;
+    }
+    .info-row { display: flex; gap: 0.75rem; align-items: baseline; }
+    .info-key {
+      font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--text3); min-width: 72px; flex-shrink: 0; font-weight: 500;
+    }
+    .info-val { font-size: 0.9rem; color: var(--text2); }
+    .wins-tag {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: linear-gradient(135deg, rgba(26,122,110,0.1), rgba(184,134,11,0.08));
+      border: 1px solid rgba(26,122,110,0.25);
+      color: var(--teal); font-size: 0.65rem; font-weight: 600;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 0.35rem 0.85rem; border-radius: 4px;
+      margin-top: 0.5rem; width: fit-content;
+    }
+
+    /* ── GUEST TAGS ── */
+    .guest-tags {
+      display: flex; flex-wrap: wrap; gap: 0.6rem;
+      margin: 1.5rem 0 2rem;
+    }
+    .guest-tag {
+      display: flex; align-items: center; gap: 0.4rem;
+      font-size: 0.72rem; font-weight: 500;
+      padding: 0.35rem 0.9rem; border-radius: 100px;
+      border: 1px solid rgba(26,122,110,0.2);
+      background: rgba(26,122,110,0.07); color: var(--teal);
+    }
+    .guest-tag::before { content: '♪'; font-size: 0.65rem; }
+
+    /* ── GRAMMY WINS ── */
+    .grammy-wins {
+      display: flex; flex-wrap: wrap; gap: 0.75rem;
+      margin: 2rem 0; padding: 1.5rem;
+      background: linear-gradient(135deg, rgba(184,134,11,0.05), rgba(240,192,64,0.04));
+      border: 1px solid rgba(184,134,11,0.15);
+      border-radius: 10px;
+    }
+    .grammy-win-item {
+      display: flex; align-items: center; gap: 0.4rem;
+      font-size: 0.72rem; font-weight: 500; letter-spacing: 0.05em;
+      background: rgba(184,134,11,0.1); color: var(--gold);
+      border: 1px solid rgba(184,134,11,0.2);
+      padding: 0.4rem 0.9rem; border-radius: 100px;
+    }
+    .grammy-win-item::before { content: '🏆'; font-size: 0.8rem; }
+
+    /* ── TEXT ── */
+    .article-body p {
+      color: var(--text2);
+      margin-bottom: 1.6rem;
+      font-size: 0.97rem;
+      line-height: 1.95;
+    }
+    .drop-cap::first-letter {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 4.2rem; font-weight: 700;
+      color: var(--teal);
+      float: left; line-height: 0.82;
+      margin: 0.06em 0.12em 0 0;
+    }
+    .article-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem; font-weight: 600;
+      color: var(--text); margin: 2.5rem 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; gap: 0.75rem;
+    }
+    .article-heading::before {
+      content: '';
+      width: 4px; height: 1.4em; border-radius: 2px;
+      background: linear-gradient(to bottom, var(--teal), var(--gold));
+      flex-shrink: 0;
+    }
+
+    /* ── PULL QUOTE ── */
+    .pull-quote {
+      position: relative;
+      margin: 2.5rem 0;
+      padding: 1.8rem 2rem 1.8rem 2.5rem;
+      background: linear-gradient(135deg, rgba(26,122,110,0.06) 0%, rgba(184,134,11,0.04) 100%);
+      border-left: 3px solid var(--teal);
+      border-radius: 0 10px 10px 0;
+    }
+    .pull-quote::before {
+      content: '"';
+      position: absolute; top: -0.5rem; left: 1.5rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 5rem; line-height: 1;
+      color: var(--teal); opacity: 0.2;
+      pointer-events: none;
+    }
+    .pull-quote p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem; font-style: italic;
+      color: var(--text) !important;
+      margin: 0 !important; line-height: 1.65;
+    }
+    .pull-quote cite {
+      display: block; margin-top: 0.75rem;
+      font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text3); font-style: normal;
+    }
+
+    /* ── CONTEXT BOX ── */
+    .context-box {
+      background: var(--cream2);
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--indigo2);
+      border-radius: 0 0 10px 10px;
+      padding: 1.5rem 1.8rem;
+      margin: 2rem 0;
+    }
+    .context-box-label {
+      font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--indigo); font-weight: 600; margin-bottom: 0.6rem;
+      display: flex; align-items: center; gap: 0.5rem;
+    }
+    .context-box-label::before {
+      content: ''; width: 16px; height: 2px; background: var(--indigo);
+    }
+    .context-box p {
+      color: var(--text2); font-size: 0.88rem; line-height: 1.8;
+      margin: 0 !important;
+    }
+
+    /* ── HIGHLIGHT SONGS ── */
+    .highlight-songs {
+      background: #fff;
+      border: 1px solid rgba(0,0,0,0.07);
+      border-top: 3px solid var(--teal);
+      border-radius: 0 0 12px 12px;
+      padding: 1.5rem 2rem;
+      margin: 2.5rem 0;
+      box-shadow: 0 2px 12px var(--shadow);
+    }
+    .highlight-songs h4 {
+      font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--teal); font-weight: 600; margin-bottom: 1.1rem;
+      display: flex; align-items: center; gap: 0.6rem;
+    }
+    .highlight-songs h4::after {
+      content: ''; flex: 1; height: 1px; background: var(--border);
+    }
+    .highlight-songs ul { list-style: none; }
+    .highlight-songs ul li {
+      display: flex; align-items: center; gap: 0.75rem;
+      padding: 0.6rem 0;
+      border-bottom: 1px solid rgba(26,122,110,0.08);
+      font-size: 0.92rem; color: var(--text2);
+      transition: color 0.2s, padding-left 0.2s;
+    }
+    .highlight-songs ul li:last-child { border-bottom: none; }
+    .highlight-songs ul li:hover { color: var(--teal); padding-left: 0.3rem; }
+    .track-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem; color: var(--teal); opacity: 0.35;
+      font-weight: 700; min-width: 1.5rem; text-align: right;
+    }
+    .song-guest {
+      margin-left: auto;
+      font-size: 0.62rem; letter-spacing: 0.08em;
+      color: var(--text3); font-style: italic;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--text);
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 3rem 2rem; text-align: center;
+    }
+    .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem; color: var(--gold3); margin-bottom: 0.75rem;
+    }
+    footer p { color: rgba(250,247,242,0.3); font-size: 0.8rem; }
+    .footer-divider {
+      width: 40px; height: 2px; margin: 0.75rem auto;
+      background: linear-gradient(90deg, var(--teal), var(--gold));
+      border-radius: 2px;
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .fade-in   { animation: fadeUp 0.7s ease both; }
+    .fade-in-2 { animation: fadeUp 0.7s 0.12s ease both; }
+    .fade-in-3 { animation: fadeUp 0.7s 0.24s ease both; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 640px) {
+      .album-showcase { grid-template-columns: 1fr; }
+      .album-cover-frame { max-width: 180px; }
+      nav { padding: 0 1.5rem; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <a href="../index.html" class="nav-logo">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path d="M9 19V6l12-3v13"/>
+      <circle cx="6" cy="18" r="3"/>
+      <circle cx="18" cy="16" r="3"/>
+    </svg>
+    Grammy Chronicles
+  </a>
+  <ul class="nav-links">
+    <li><a href="../index.html#featured">Nổi bật</a></li>
+    <li><a href="../index.html#posts">Album</a></li>
+    <li><a href="../index.html#about">Về tôi</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="article-hero">
+  <div class="hero-year-watermark">2008</div>
+  <div class="hero-inner">
+    <div class="grammy-badge fade-in">🏆 Grammy Album of the Year · 2008</div>
+    <div class="hero-year-small fade-in">2008</div>
+    <h1 class="article-title fade-in-2">"River: The Joni Letters"</h1>
+    <p class="article-artist fade-in-2">Herbie Hancock</p>
+    <p class="article-meta fade-in-3">Jazz · Vocal Jazz · Verve Records</p>
+  </div>
+  <div class="hero-accent-bar"></div>
+</div>
+
+<!-- BODY -->
+<div class="article-body">
+
+  <a href="../index.html#posts" class="back-link">Quay lại danh sách</a>
+
+  <!-- Album card -->
+  <div class="album-showcase">
+    <div class="album-cover-frame">
+      <img
+        src="https://www.herbiehancock.com/wp-content/uploads/2017/02/River-The-Joni-Letters.jpg"
+        alt="River: The Joni Letters – Herbie Hancock album cover"
+      />
+    </div>
+    <div class="album-info">
+      <div class="album-name">"River: The Joni Letters"</div>
+      <div class="info-row">
+        <span class="info-key">Nghệ sĩ</span>
+        <span class="info-val">Herbie Hancock</span>
+      </div>
+      <div class="info-row">
+        <span class="info-key">Phát hành</span>
+        <span class="info-val">25 tháng 9, 2007</span>
+      </div>
+      <div class="info-row">
+        <span class="info-key">Thể loại</span>
+        <span class="info-val">Jazz · Vocal Jazz</span>
+      </div>
+      <div class="info-row">
+        <span class="info-key">Hãng đĩa</span>
+        <span class="info-val">Verve Records</span>
+      </div>
+      <div class="info-row">
+        <span class="info-key">Sản xuất</span>
+        <span class="info-val">Larry Klein</span>
+      </div>
+      <div class="wins-tag">🏆 Grammy Album of the Year 2008 · Jazz đầu tiên sau 43 năm</div>
+    </div>
+  </div>
+
+  <!-- Khách mời -->
+  <div class="guest-tags">
+    <span class="guest-tag">Norah Jones</span>
+    <span class="guest-tag">Tina Turner</span>
+    <span class="guest-tag">Corinne Bailey Rae</span>
+    <span class="guest-tag">Joni Mitchell</span>
+    <span class="guest-tag">Leonard Cohen</span>
+    <span class="guest-tag">Dave Matthews</span>
+  </div>
+
+  <!-- Grammy wins -->
+  <div class="grammy-wins">
+    <span class="grammy-win-item">Album of the Year</span>
+    <span class="grammy-win-item">Best Jazz Vocal Album</span>
+  </div>
+
+  <!-- Bài viết -->
+  <p class="drop-cap">
+    <em>"River: The Joni Letters"</em> là album của nghệ sĩ jazz huyền thoại Herbie Hancock, phát hành tháng 9 năm 2007 và giành giải Grammy Album của Năm năm 2008 — lần đầu tiên sau 43 năm một album jazz giành được danh hiệu cao quý này kể từ khi <em>Getz/Gilberto</em> của Stan Getz thắng giải năm 1965.
+  </p>
+
+  <div class="context-box">
+    <div class="context-box-label">Lịch sử Jazz tại Grammy</div>
+    <p>Trước Herbie Hancock, lần cuối cùng một album jazz giành Grammy Album of the Year là năm 1965 với <em>Getz/Gilberto</em> — bossa nova của Stan Getz và João Gilberto. Suốt 43 năm sau đó, jazz gần như vắng bóng ở hạng mục danh giá nhất. Chiến thắng của <em>River: The Joni Letters</em> là khoảnh khắc lịch sử được cả thế giới jazz chờ đợi.</p>
+  </div>
+
+  <div class="pull-quote">
+    <p>"Một lời tri ân sang trọng và tinh tế — nơi jazz đương đại gặp gỡ những bài ca bất tử của Joni Mitchell."</p>
+    <cite>— Đêm Grammy, Staples Center, 2008</cite>
+  </div>
+
+  <p>
+    Album là lời tri ân sâu sắc gửi đến <strong style="color:var(--text);">Joni Mitchell</strong> — nữ nghệ sĩ, nhạc sĩ và ca sĩ huyền thoại người Canada, một trong những giọng bút vĩ đại nhất lịch sử âm nhạc đại chúng. Herbie Hancock đã mời một dàn giọng ca đẳng cấp thế giới — <strong style="color:var(--teal);">Norah Jones, Corinne Bailey Rae, Tina Turner, Leonard Cohen</strong> và chính Joni Mitchell — để cùng diễn giải lại những bài hát kinh điển dưới màu sắc jazz đương đại.
+  </p>
+
+  <h3 class="article-heading">Bàn tay vàng của Herbie Hancock</h3>
+
+  <p>
+    Điều làm nên sức mạnh của album không chỉ là danh sách khách mời lừng lẫy, mà là cách Herbie Hancock — với hơn 50 năm kinh nghiệm — dệt từng ca khúc thành những tác phẩm hoàn toàn mới mà vẫn giữ trọn linh hồn gốc. Mỗi nốt piano của ông như một câu thư tay viết cẩn thận, gửi đến người mà ông ngưỡng mộ suốt cả cuộc đời nghệ thuật.
+  </p>
+
+  <p>
+    Sản xuất bởi Larry Klein — người từng là chồng của Joni Mitchell — album mang một sự hiểu biết đặc biệt sâu sắc về âm nhạc của bà. Từng ca khúc được sắp xếp với sự tinh tế của một curator bảo tàng: không áp đặt, không phô trương, chỉ để âm nhạc tự nói lên bằng ngôn ngữ của nó.
+  </p>
+
+  <h3 class="article-heading">Chiến thắng vang vọng mãi</h3>
+
+  <p>
+    Chiến thắng Grammy 2008 không chỉ là vinh danh cá nhân — đó là khoảnh khắc jazz được nhìn nhận trở lại như một nghệ thuật đỉnh cao trong thời đại pop thống trị. Khi Herbie Hancock bước lên sân khấu nhận giải, nhiều nghệ sĩ jazz cao tuổi trong khán phòng đã rơi nước mắt. Một chiến thắng lặng lẽ nhưng vang vọng mãi — như chính những nốt nhạc jazz: không ồn ào, nhưng không bao giờ phai mờ.
+  </p>
+
+  <!-- Ca khúc nổi bật -->
+  <div class="highlight-songs">
+    <h4>Ca khúc nổi bật</h4>
+    <ul>
+      <li>
+        <span class="track-num">01</span>
+        River
+        <span class="song-guest">ft. Norah Jones</span>
+      </li>
+      <li>
+        <span class="track-num">02</span>
+        Both Sides Now
+        <span class="song-guest">ft. Joni Mitchell</span>
+      </li>
+      <li>
+        <span class="track-num">03</span>
+        The Tea Leaf Prophecy
+        <span class="song-guest">ft. Tina Turner</span>
+      </li>
+      <li>
+        <span class="track-num">04</span>
+        Court and Spark
+        <span class="song-guest">ft. Norah Jones</span>
+      </li>
+      <li>
+        <span class="track-num">05</span>
+        Edith and the Kingpin
+        <span class="song-guest">ft. Corinne Bailey Rae</span>
+      </li>
+      <li>
+        <span class="track-num">06</span>
+        Amelia
+        <span class="song-guest">ft. Leonard Cohen</span>
+      </li>
+    </ul>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">♪ Grammy Chronicles</div>
+  <div class="footer-divider"></div>
+  <p>Website cá nhân của Nguyễn Trọng Phúc · Sư phạm Sinh học</p>
+  <p style="margin-top:0.4rem;">Bài thi kết thúc học phần · 2026</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Grammy Chronicles — Nguyễn Trọng Phúc</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path d="M9 19V6l12-3v13"/>
+      <circle cx="6" cy="18" r="3"/>
+      <circle cx="18" cy="16" r="3"/>
+    </svg>
+    Grammy Chronicles
+  </a>
+  <ul class="nav-links">
+    <li><a href="#featured">Nổi bật</a></li>
+    <li><a href="#post">Album</a></li>
+    <li><a href="#about">Về tôi</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+
+  <!-- Grammy gramophone watermark SVG -->
+  <svg class="hero-gramophone" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg" fill="none">
+    <!-- Horn / bell of gramophone -->
+    <ellipse cx="420" cy="200" rx="160" ry="130" stroke="#b8860b" stroke-width="3" fill="rgba(184,134,11,0.04)"/>
+    <ellipse cx="420" cy="200" rx="120" ry="95" stroke="#b8860b" stroke-width="2" fill="none"/>
+    <ellipse cx="420" cy="200" rx="80" ry="62" stroke="#b8860b" stroke-width="2" fill="rgba(184,134,11,0.03)"/>
+    <ellipse cx="420" cy="200" rx="40" ry="30" stroke="#b8860b" stroke-width="2" fill="rgba(184,134,11,0.08)"/>
+    <!-- Horn neck -->
+    <path d="M310 210 Q280 240 260 280 Q245 310 250 340" stroke="#b8860b" stroke-width="8" stroke-linecap="round" fill="none"/>
+    <path d="M330 220 Q300 250 280 290 Q265 320 270 350" stroke="#b8860b" stroke-width="5" stroke-linecap="round" fill="none" opacity="0.5"/>
+    <!-- Base cabinet -->
+    <rect x="100" y="360" width="200" height="140" rx="12" stroke="#b8860b" stroke-width="3" fill="rgba(184,134,11,0.04)"/>
+    <!-- Turntable / platter -->
+    <circle cx="200" cy="355" r="110" stroke="#b8860b" stroke-width="3" fill="rgba(184,134,11,0.03)"/>
+    <circle cx="200" cy="355" r="85" stroke="#b8860b" stroke-width="1.5" fill="none" opacity="0.5"/>
+    <circle cx="200" cy="355" r="55" stroke="#b8860b" stroke-width="1.5" fill="none" opacity="0.5"/>
+    <circle cx="200" cy="355" r="25" stroke="#b8860b" stroke-width="2" fill="rgba(184,134,11,0.1)"/>
+    <circle cx="200" cy="355" r="6" fill="#b8860b" opacity="0.4"/>
+    <!-- Grooves -->
+    <circle cx="200" cy="355" r="70" stroke="#b8860b" stroke-width="0.5" fill="none" opacity="0.3"/>
+    <circle cx="200" cy="355" r="90" stroke="#b8860b" stroke-width="0.5" fill="none" opacity="0.3"/>
+    <circle cx="200" cy="355" r="100" stroke="#b8860b" stroke-width="0.5" fill="none" opacity="0.3"/>
+    <!-- Tonearm -->
+    <line x1="290" y1="290" x2="230" y2="340" stroke="#b8860b" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="290" cy="286" r="10" stroke="#b8860b" stroke-width="2" fill="rgba(184,134,11,0.08)"/>
+    <!-- Legs -->
+    <line x1="120" y1="500" x2="100" y2="560" stroke="#b8860b" stroke-width="4" stroke-linecap="round"/>
+    <line x1="280" y1="500" x2="300" y2="560" stroke="#b8860b" stroke-width="4" stroke-linecap="round"/>
+    <!-- Stars -->
+    <text x="50" y="100" font-size="18" fill="#b8860b" opacity="0.3">★</text>
+    <text x="500" y="450" font-size="12" fill="#c0534a" opacity="0.4">★</text>
+    <text x="80" y="460" font-size="10" fill="#3d3b8e" opacity="0.35">★</text>
+    <text x="480" y="80" font-size="14" fill="#1a7a6e" opacity="0.3">★</text>
+  </svg>
+
+  <div class="hero-circle-1"></div>
+  <div class="hero-circle-2"></div>
+  <div class="hero-circle-3"></div>
+
+  <!-- Floating vinyls -->
+  <div class="vinyl-float vf1"><div class="v-center"></div></div>
+  <div class="vinyl-float vf2"><div class="v-center"></div></div>
+  <div class="vinyl-float vf3"><div class="v-center"></div></div>
+
+  <!-- Gold particles -->
+  <div class="particles" id="particles"></div>
+
+  <div class="hero-content">
+    <div class="hero-tag">Grammy Album of the Year · 2007–2026</div>
+    <h1>Những <em>kiệt tác</em><br/>đoạt giải Grammy</h1>
+    <p class="hero-subtitle">20 Album · 20 Câu Chuyện</p>
+    <p class="desc">Hành trình khám phá 20 album xuất sắc nhất được vinh danh tại lễ trao giải Grammy — mỗi album là một câu chuyện, một thời đại.</p>
+    <div class="hero-cta">
+      <a href="#posts" class="btn btn-primary">Khám phá ngay</a>
+      <a href="#about" class="btn btn-outline">Về tác giả</a>
+    </div>
+    <div class="hero-years">
+      <span class="year-pill yp-gold">Taylor Swift × 4</span>
+      <span class="year-pill yp-rose">Beyoncé · Bad Bunny</span>
+      <span class="year-pill yp-indigo">Adele · Billie Eilish</span>
+      <span class="year-pill yp-teal">Arcade Fire · Daft Punk</span>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stats-bar-inner">
+    <div class="stat-item">
+      <div class="stat-number">20</div>
+      <div class="stat-label-bar">Album được review</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">19</div>
+      <div class="stat-label-bar">Năm âm nhạc</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">4×</div>
+      <div class="stat-label-bar">Kỷ lục Taylor Swift</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">∞</div>
+      <div class="stat-label-bar">Nốt nhạc cảm xúc</div>
+    </div>
+  </div>
+</div>
+
+<!-- FEATURED: Bad Bunny 2026 -->
+<section class="featured" id="featured">
+  <div class="featured-inner">
+    <div>
+      <div class="featured-badge">
+        <span>★ Album nổi bật · Grammy 2026</span>
+      </div>
+      <h2 class="featured-title">"DeBÍ TiRAR MáS FOToS"</h2>
+      <p class="featured-artist">Bad Bunny</p>
+      <p class="featured-genre">Latin Trap · Reggaetón · Plena</p>
+      <div class="featured-tags">
+        <span class="ftag">Album of the Year</span>
+        <span class="ftag">Grammy 2026</span>
+        <span class="ftag">Puerto Rico</span>
+        <span class="ftag">Lịch sử Grammy</span>
+      </div>
+      <p class="featured-desc">
+        Album thứ sáu của Bad Bunny — một bức thư tình gửi đến Puerto Rico. Đây là album đầu tiên bằng tiếng Tây Ban Nha giành giải Album của Năm tại Grammy, trở thành biểu tượng văn hóa trong bối cảnh nước Mỹ đang đối mặt với nhiều căng thẳng về vấn đề di trú.
+      </p>
+      <a href="post/2026-bad-bunny.html" class="btn btn-rose">Đọc review đầy đủ</a>
+    </div>
+    <div class="vinyl-showcase">
+      <div class="vinyl-glow"></div>
+      <div class="vinyl-main">
+        <div class="vinyl-label">BAD<br/>BUNNY<br/>2026</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- POSTS GRID -->
+<section id="posts">
+  <div class="container">
+    <p class="section-label fade-up">Tất cả bài viết</p>
+    <h2 class="section-title fade-up">20 Album <em>đoạt giải</em><br/>Grammy (2007–2026)</h2>
+    <p class="section-desc fade-up">Mỗi năm một câu chuyện âm nhạc. Mỗi album một kỷ nguyên.</p>
+
+    <div class="posts-grid">
+
+      <a href="post/2026-bad-bunny.html" class="post-card pc-rose fade-up">
+        <div class="post-card-accent"></div>
+        <div class="post-card-header">
+          <div class="post-year">26</div>
+          <div class="post-meta"><p class="post-genre">Latin Trap · Reggaetón</p></div>
+        </div>
+        <div class="post-card-body">
+          <p class="post-title">"DeBÍ TiRAR MáS FOToS"</p>
+          <p class="post-artist">Bad Bunny</p>
+          <p class="post-excerpt">Album đầu tiên bằng tiếng Tây Ban Nha giành Grammy Album of the Year — một chiến thắng lịch sử mang ý nghĩa văn hóa sâu sắc.</p>
+        </div>
+        <div class="post-footer"><span class="read-more">Đọc thêm</span></div>
+      </a>
+
+      <a href="post/2025-beyonce.html" class="post-card pc-gold fade-up">
+        <div class="post-card-accent"></div>
+        <div class="post-card-header">
+          <div class="post-year">25</div>
+          <div class="post-meta"><p class="post-genre">Country · Americana</p></div>
+        </div>
+        <div class="post-card-body">
+          <p class="post-title">"Cowboy Carter"</p>
+          <p class="post-artist">Beyoncé</p>
+          <p class="post-excerpt">Một cuộc phiêu lưu táo bạo vào địa hạt nhạc Country — Beyoncé viết lại lịch sử âm nhạc Mỹ với 27 ca khúc đồ sộ.</p>
+        </div>
+        <div class="post-footer"><span class="read-more">Đọc thêm</span></div>
+      </a>
+
+      <a href="post/2024-taylor-swift.html" class="post-card pc-indigo fade-up">
+        <div class="post-card-accent"></div>
+        <div class="post-card-header">
+          <div class="post-year">24</div>
+          <div class="post-meta"><p class="post-genre">Synth-Pop · Dream Pop</p></div>
+        </div>
+        <div class="post-card-body">
+          <p class="post-title">"Midnights"</p>
+          <p class="post-artist">Taylor Swift</p>
+          <p class="post-excerpt">Lần thứ tư Taylor Swift giành Album of the Year — kỷ lục chưa từng có trong lịch sử Grammy. 13 câu chuyện từ những đêm trăn trở.</p>
+        </div>
+        <div class="post-footer"><span class="read-more">Đọc thêm</span></div>
+      </a>
+
+      <a href="post/2023-harry-styles.html" class="post-card pc-teal fade-up">
+        <div class="post-card-accent"></div>
+        <div class="post-card-header">
+          <div class="post-year">23</div>
+          <div class="post-meta"><p class="post-genre">Pop · Indie Pop</p></div>
+        </div>
+        <div class="post-card-body">
+          <p class="post-title">"Harry's House"</p>
+          <p class="post-artist">Harry Styles</p>
+          <p class="post-excerpt">Âm hưởng ấm áp thân mật, như buổi chiều muộn trong căn nhà nhỏ — Harry Styles chứng minh sự chín muồi vượt bậc.</p>
+        </div>
+        <div class="post-footer"><span class="read-more">Đọc thêm</span></div>
+      </a>
+
+      <a href="post/2022-jon-batiste.html" class="post-card pc-purple fade-up">
+        <div class="post-card-accent"></div>
+        <div class="post-card-header">
+          <div class="post-year">22</div>
+          <div class="post-meta"><p class="post-genre">R&B · Soul · Jazz</p></div>
+        </div>
+        <div class="post-card-body">
+          <p class="post-title">"We Are"</p>
+          <p class="post-artist">Jon Batiste</p>
+          <p class="post-excerpt">Cú sốc lớn tại Grammy 2022 — Jon Batiste đánh bại Billie Eilish và Lil Nas X với bức tranh âm nhạc đa sắc màu Louisiana.</p>
+        </div>
+        <div class="post-footer"><span class="read-more">Đọc thêm</span></div>
+      </a>
+
+      <a href="post/2021-taylor-swift.html" class="post-card pc-teal fade-up">
+        <div class="post-card-accent"></div>
+        <div class="post-card-header">
+          <div class="post-year">21</div>
+          <div class="post-meta"><p class="post-genre">Indie Folk · Alt Pop</p></div>
+        </div>
+        <div class="post-card-body">
+          <p class="post-title">"Folklore"</p>
+          <p class="post-artist">Taylor Swift</p>
+          <p class="post-excerpt">Ra đời trong đại dịch, album indie folk trầm lặng và thơ ca — nhiều nhà phê bình xem đây là tác phẩm hay nhất của Taylor Swift.</p>
+        </div>
+        <div class="post-footer"><span class="read-more">Đọc thêm</span></div>
+      </a>
+
+      <a href="post/2020-billie-eilish.html" class="post-card pc-indigo fade-up">
+        <div class="post-card-accent"></div>
+        <div class="post-card-header">
+          <div class="post-year">20</div>
+          <div class="post-meta"><p class="post-genre">Dark Pop · Electropop</p></div>
+        </div>
+        <div class="post-card-body">
+          <p class="post-title">"When We All Fall Asleep..."</p>
+          <p class="post-artist">Billie Eilish</p>
+          <p class="post-excerpt">17 tuổi, quét sạch 4 giải Grammy lớn nhất — kỳ tích 40 năm mới lặp lại. Album thì thầm rùng rợn làm thay đổi cả nền pop.</p>
+        </div>
+        <div class="post-footer"><span class="read-more">Đọc thêm</span></div>
+      </a>
+
+      <a href="post/2019-kacey-musgraves.html" class="post-card pc-amber fade-up">
+        <div class="post-card-accent"></div>
+        <div class="post-card-header">
+          <div class="post-year">19</div>
+          <div class="post-meta"><p class="post-genre">Country Pop · Dream Pop</p></div>
+        </div>
+        <div class="post-card-body">
+          <p class="post-title">"Golden Hour"</p>
+          <p class="post-artist">Kacey Musgraves</p>
+          <p class="post-excerpt">Buổi chiều tà chan hòa ánh nắng vàng — album tình yêu thuần khiết được giới phê bình yêu thích nhất trong lịch sử Grammy gần đây.</p>
+        </div>
+        <div class="post-footer"><span class="read-more">Đọc thêm</span></div>
+      </a>
+
+      <a href="post/2018-bruno-mars.html" class="post-card pc-rose fade-up">
+        <div class="post-card-accent"></div>
+        <div class="post-card-header">
+          <div class="post-year">18</div>
+          <div class="post-meta"><p class="post-genre">Funk · R&B · Soul</p></div>
+        </div>
+        <div class="post-card-body">
+          <p class="post-title">"24K Magic"</p>
+          <p class="post-artist">Bruno Mars</p>
+          <p class="post-excerpt">Chuyến tàu thời gian về thập niên 80-90 — thắng 7 giải Grammy, chứng minh rằng hoài cổ tài hoa là thứ vô cùng tươi mới.</p>
+        </div>
+        <div class="post-footer"><span class="read-more">Đọc thêm</span></div>
+      </a>
+
+      <a href="post/2017-adele.html" class="post-card pc-gold fade-up">
+        <div class="post-card-accent"></div>
+        <div class="post-card-header">
+          <div class="post-year">17</div>
+          <div class="post-meta"><p class="post-genre">Pop · Soul · R&B</p></div>
+        </div>
+        <div class="post-card-body">
+          <p class="post-title">"25"</p>
+          <p class="post-artist">Adele</p>
+          <p class="post-excerpt">Bức thư gửi bản thân ở tuổi 25 — giọng ca đạt đến độ chín muồi đáng kinh ngạc, bán hơn 22 triệu bản toàn cầu.</p>
+        </div>
+        <div class="post-footer"><span class="read-more">Đọc thêm</span></div>
+      </a>
+
+      <a href="post/2016-taylor-swift.html" class="post-card pc-indigo fade-up">
+        <div class="post-card-accent"></div>
+        <div class="post-card-header">
+          <div class="post-year">16</div>
+          <div class="post-meta"><p class="post-genre">Synth-Pop · New Wave</p></div>
+        </div>
+        <div class="post-card-body">
+          <p class="post-title">"1989"</p>
+          <p class="post-artist">Taylor Swift</p>
+          <p class="post-excerpt">Tuyên ngôn pop hoàn hảo — Taylor Swift bỏ lại toàn bộ fan base country để tái sinh như một siêu sao pop toàn cầu.</p>
+        </div>
+        <div class="post-footer"><span class="read-more">Đọc thêm</span></div>
+      </a>
+
+      <a href="post/2015-beck.html" class="post-card pc-teal fade-up">
+        <div class="post-card-accent"></div>
+        <div class="post-card-header">
+          <div class="post-year">15</div>
+          <div class="post-meta"><p class="post-genre">Folk Rock · Acoustic</p></div>
+        </div>
+        <div class="post-card-body">
+          <p class="post-title">"Morning Phase"</p>
+          <p class="post-artist">Beck</p>
+          <p class="post-excerpt">Buổi sáng sớm yên tĩnh và đẹp đến xao xuyến — chiến thắng bất ngờ, nhưng xứng đáng với tầng tầng cảm xúc trong từng nốt nhạc.</p>
+        </div>
+        <div class="post-footer"><span class="read-more">Đọc thêm</span></div>
+      </a>
+
+      <a href="post/2014-daft-punk.html" class="post-card pc-purple fade-up">
+        <div class="post-card-accent"></div>
+        <div class="post-card-header">
+          <div class="post-year">14</div>
+          <div class="post-meta"><p class="post-genre">Electronic · Disco · Funk</p></div>
+        </div>
+        <div class="post-card-body">
+          <p class="post-title">"Random Access Memories"</p>
+          <p class="post-artist">Daft Punk</p>
+          <p class="post-excerpt">Bức thư tình gửi disco thập niên 70 — được thu âm với nhạc sĩ thật thay vì máy tính, thay đổi cách thế giới nghe nhạc điện tử.</p>
+        </div>
+        <div class="post-footer"><span class="read-more">Đọc thêm</span></div>
+      </a>
+
+      <a href="post/2013-mumford-sons.html" class="post-card pc-amber fade-up">
+        <div class="post-card-accent"></div>
+        <div class="post-card-header">
+          <div class="post-year">13</div>
+          <div class="post-meta"><p class="post-genre">Folk Rock · Indie Folk</p></div>
+        </div>
+        <div class="post-card-body">
+          <p class="post-title">"Babel"</p>
+          <p class="post-artist">Mumford & Sons</p>
+          <p class="post-excerpt">Banjo rền vang, triết lý sâu sắc — album UK đầu tiên bán 1 triệu bản tuần đầu. Trải nghiệm cảm xúc trọn vẹn từ đầu đến cuối.</p>
+        </div>
+        <div class="post-footer"><span class="read-more">Đọc thêm</span></div>
+      </a>
+
+      <a href="post/2012-adele.html" class="post-card pc-rose fade-up">
+        <div class="post-card-accent"></div>
+        <div class="post-card-header">
+          <div class="post-year">12</div>
+          <div class="post-meta"><p class="post-genre">Soul · Pop · R&B</p></div>
+        </div>
+        <div class="post-card-body">
+          <p class="post-title">"21"</p>
+          <p class="post-artist">Adele</p>
+          <p class="post-excerpt">Album về nỗi đau chia tay — giọng ca xé lòng của Adele biến "21" thành một trong những album bán chạy nhất mọi thời đại.</p>
+        </div>
+        <div class="post-footer"><span class="read-more">Đọc thêm</span></div>
+      </a>
+
+      <a href="post/2011-arcade-fire.html" class="post-card pc-indigo fade-up">
+        <div class="post-card-accent"></div>
+        <div class="post-card-header">
+          <div class="post-year">11</div>
+          <div class="post-meta"><p class="post-genre">Indie Rock · Art Rock</p></div>
+        </div>
+        <div class="post-card-body">
+          <p class="post-title">"The Suburbs"</p>
+          <p class="post-artist">Arcade Fire</p>
+          <p class="post-excerpt">Indie rock đánh bại Eminem và Lady Gaga — hành trình hoài niệm về tuổi thơ vùng ngoại ô, rộng lớn và ám ảnh.</p>
+        </div>
+        <div class="post-footer"><span class="read-more">Đọc thêm</span></div>
+      </a>
+
+      <a href="post/2010-taylor-swift.html" class="post-card pc-gold fade-up">
+        <div class="post-card-accent"></div>
+        <div class="post-card-header">
+          <div class="post-year">10</div>
+          <div class="post-meta"><p class="post-genre">Country Pop</p></div>
+        </div>
+        <div class="post-card-body">
+          <p class="post-title">"Fearless"</p>
+          <p class="post-artist">Taylor Swift</p>
+          <p class="post-excerpt">20 tuổi — trở thành nghệ sĩ trẻ nhất giành Grammy Album of the Year. Những câu chuyện tình thời trung học kể bằng tài năng thiên bẩm.</p>
+        </div>
+        <div class="post-footer"><span class="read-more">Đọc thêm</span></div>
+      </a>
+
+      <a href="post/2009-robert-plant.html" class="post-card pc-teal fade-up">
+        <div class="post-card-accent"></div>
+        <div class="post-card-header">
+          <div class="post-year">09</div>
+          <div class="post-meta"><p class="post-genre">Folk · Country · Blues</p></div>
+        </div>
+        <div class="post-card-body">
+          <p class="post-title">"Raising Sand"</p>
+          <p class="post-artist">Robert Plant & Alison Krauss</p>
+          <p class="post-excerpt">Cuộc gặp gỡ kỳ diệu giữa rock huyền thoại và bluegrass đồng quê — đẹp như một giấc mơ mùa hè, không biên giới âm nhạc.</p>
+        </div>
+        <div class="post-footer"><span class="read-more">Đọc thêm</span></div>
+      </a>
+
+      <a href="post/2008-herbie-hancock.html" class="post-card pc-purple fade-up">
+        <div class="post-card-accent"></div>
+        <div class="post-card-header">
+          <div class="post-year">08</div>
+          <div class="post-meta"><p class="post-genre">Jazz · Vocal Jazz</p></div>
+        </div>
+        <div class="post-card-body">
+          <p class="post-title">"River: The Joni Letters"</p>
+          <p class="post-artist">Herbie Hancock</p>
+          <p class="post-excerpt">Lần đầu sau 43 năm một album jazz giành Grammy — lời tri ân sang trọng và tinh tế gửi huyền thoại Joni Mitchell.</p>
+        </div>
+        <div class="post-footer"><span class="read-more">Đọc thêm</span></div>
+      </a>
+
+      <a href="post/2007-dixie-chicks.html" class="post-card pc-amber fade-up">
+        <div class="post-card-accent"></div>
+        <div class="post-card-header">
+          <div class="post-year">07</div>
+          <div class="post-meta"><p class="post-genre">Country · Country Rock</p></div>
+        </div>
+        <div class="post-card-body">
+          <p class="post-title">"Taking the Long Way"</p>
+          <p class="post-artist">Dixie Chicks</p>
+          <p class="post-excerpt">Ra đời trong tẩy chay và cấm sóng — tuyên ngôn dũng cảm của những phụ nữ dám nói lên sự thật. Chiến thắng của tự do ngôn luận.</p>
+        </div>
+        <div class="post-footer"><span class="read-more">Đọc thêm</span></div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-inner">
+    <div class="about-info fade-up">
+      <div class="about-avatar">N</div>
+      <p class="section-label">Tác giả</p>
+      <h2>Nguyễn<br/>Trọng Phúc</h2>
+      <p class="role">Sư phạm Sinh học</p>
+      <p class="role">MSSV: 2510370</p>
+      <p class="role">Lớp : SHK49SP </p>  
+      <p>Sinh viên yêu âm nhạc và những câu chuyện đằng sau những nốt nhạc.</p>
+      <div>
+        <span class="about-tag">Âm nhạc</span>
+        <span class="about-tag">Grammy</span>
+        <span class="about-tag">Sinh học</span>
+      </div>
+    </div>
+    <div class="about-text fade-up">
+      <p>Website này là nơi tôi — Nguyễn Trọng Phúc, sinh viên chuyên ngành Sư phạm Sinh học — chia sẻ niềm đam mê với âm nhạc và những câu chuyện văn hóa đằng sau các giải Grammy.</p>
+      <p>Âm nhạc và Sinh học có một điểm chung thú vị: cả hai đều là những hệ thống phức tạp, với mỗi thành phần nhỏ đóng vai trò quan trọng trong tổng thể. Mỗi album Grammy là một "sinh thái" âm nhạc — nơi giai điệu, ca từ và cảm xúc cộng sinh để tạo ra điều gì đó lớn hơn chính nó.</p>
+      <p>Tại đây bạn sẽ tìm thấy review và bình luận về 20 album đoạt giải Grammy Album of the Year từ 2007 đến 2026 — mỗi bài viết là một góc nhìn cá nhân, chân thực về âm nhạc và thời đại mà nó ra đời.</p>
+      <div class="about-stats">
+        <div>
+          <div class="about-stat-num n-gold">20</div>
+          <div class="about-stat-label">Album được review</div>
+        </div>
+        <div>
+          <div class="about-stat-num n-rose">19</div>
+          <div class="about-stat-label">Năm âm nhạc</div>
+        </div>
+        <div>
+          <div class="about-stat-num n-indigo">∞</div>
+          <div class="about-stat-label">Nốt nhạc cảm xúc</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">♪ Grammy Chronicles</div>
+  <div class="footer-divider"></div>
+  <p>Website cá nhân của Nguyễn Trọng Phúc · MSSV: 2510370 · Lớp : SHK49SP </p>
+  <p style="margin-top:0.4rem;">Bài thi kết thúc học phần · 2026</p>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>
